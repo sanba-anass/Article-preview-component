@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+:root {
+	--Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+	--Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+	--Grayish-Blue: hsl(212, 23%, 69%);
+	--Light-Grayish-Blue: hsl(210, 46%, 95%);
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Manrope", sans-serif;
+}
+
+body {
+	padding: 1rem;
+	background-color: var(--Light-Grayish-Blue);
+	display: grid;
+	place-items: center;
+	min-height: 100vh;
+	width: 100%;
+	overflow-x: hidden;
+}
+img {
+	display: block;
+	max-width: 100%;
+}
+.container {
+	width: 100%;
+	max-width: 46rem;
+	margin: 0 auto;
+	box-shadow: 0rem 2.5rem 2.5rem -0.625rem rgb(201 213 225 / 50%);
+	background-color: white;
+	border-radius: 0.5rem;
+	display: flex;
+}
+
+.container .text {
+	flex-basis: 70%;
+}
+h1 {
+	font-size: 1.25rem;
+	line-height: 1.4;
+	font-weight: 700;
+	color: var(--Very-Dark-Grayish-Blue);
+	margin-bottom: 1rem;
+}
+p {
+	font-size: 0.85rem;
+	line-height: 1.6;
+	font-weight: 500;
+	color: var(--Desaturated-Dark-Blue);
+	margin-bottom: 1.25rem;
+}
+.container .content {
+	flex-basis: 65%;
+	padding: 2.25rem;
+	position: relative;
+	isolation: isolate;
+}
+@media (max-width: 23.8em) {
+	.container .content {
+		padding: 1.5rem;
+	}
+}
+.hide {
+	opacity: 0;
+	pointer-events: none;
+}
+.pointer {
+	pointer-events: none;
+}
+.container .drawers-img {
+	flex-basis: 45%;
+}
+.container .drawers-img img {
+	height: 100%;
+	object-fit: cover;
+	object-position: 0.01rem;
+	border-radius: 0.5rem 0 0 0.5rem;
+}
+@media (max-width: 43.75em) {
+	.container {
+		flex-direction: column;
+		max-width: 30rem;
+	}
+	.container .drawers-img img {
+		border-radius: 0.5rem 0.5rem 0 0;
+	}
+}
+.container .user-text .user-name {
+	font-size: 0.92rem;
+	font-weight: 700;
+	color: var(--Very-Dark-Grayish-Blue);
+	margin-bottom: 0.25rem;
+}
+.container .user-text .date {
+	color: var(--Grayish-Blue);
+	font-size: 0.83rem;
+	position: relative;
+	z-index: -2;
+}
+
+.share-icon {
+	margin-left: auto;
+	width: 2rem;
+	height: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--Light-Grayish-Blue);
+	border-radius: 50%;
+	border: none;
+	cursor: pointer;
+	transition: 0.3s background-color;
+	position: relative;
+}
+.share-icon:hover {
+	background-color: var(--Desaturated-Dark-Blue);
+}
+.share-icon:hover svg path {
+	fill: white;
+}
+.share-icon .tool-tip {
+	position: absolute;
+	background-color: var(--Very-Dark-Grayish-Blue);
+	height: 50px;
+	left: 50%;
+	transform: translatex(-50%);
+	bottom: 3.2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+	height: fit-content;
+	padding: 1rem 2.5rem;
+	border-radius: 0.5rem;
+	transition: 0.3s opacity;
+}
+
+.share-icon .tool-tip::after {
+	content: "";
+	position: absolute;
+	background-color: var(--Very-Dark-Grayish-Blue);
+	height: 0.95rem;
+	width: 0.95rem;
+	bottom: -0.5rem;
+	transform: rotate(45deg);
+}
+@media (max-width: 40.625em) {
+	.share-icon .tool-tip {
+		transform: translateX(0%);
+		left: 0;
+		width: 100%;
+		bottom: 0;
+		border-radius: 0 0 0.5rem 0.5rem;
+		min-height: 20%;
+		z-index: -1;
+		align-items: center;
+		justify-content: center;
+		padding-inline: 0;
+		gap: 1.5rem;
+	}
+	.share-icon .tool-tip::after {
+		display: none;
+	}
+	.share-icon {
+		position: static;
+		flex-shrink: 0;
+	}
+}
+
+.share-icon .tool-tip .social-icons {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+.share-icon .tool-tip .social-icons :nth-child(1):hover path {
+	fill: var(--Grayish-Blue);
+}
+.share-icon .tool-tip .social-icons :nth-child(2):hover path {
+	fill: var(--Grayish-Blue);
+}
+.share-icon .tool-tip .social-icons :nth-child(3):hover path {
+	fill: var(--Grayish-Blue);
+}
+.share-icon .tool-tip .label {
+	color: var(--Grayish-Blue);
+	text-transform: uppercase;
+	letter-spacing: 0.25rem;
+}
+.user-comp {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+.user-img {
+	width: 3rem;
+	position: relative;
+	z-index: -2;
+}
+.user-img img {
+	border-radius: 50%;
+}
